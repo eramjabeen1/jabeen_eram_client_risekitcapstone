@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import axios from 'axios'
+import { createJournalEntry } from '../services/journalService'
+
 
 
 const JournalForm = () => {
@@ -23,17 +24,8 @@ const JournalForm = () => {
  const handleSubmit = async (e) => {
   e.preventDefault()
   try {
-    const token = localStorage.getItem('token')
-    const res = await axios.post(
-      'http://localhost:5000/api/journal',
-      formData,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    )
-    console.log('Journal entry saved:', res.data)
+    const res = await createJournalEntry(formData)
+    console.log('Journal entry saved:', res)
 
     setFormData({
       title: '',
