@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { getJournalEntries } from '../services/journalService'
 
-const JournalEntryList = () => {
+const JournalEntryList = ({ testMode }) => {
   const [entries, setEntries] = useState([])
 
   useEffect(() => {
     const fetchEntries = async () => {
       try {
-        const data = await getJournalEntries()
+        const data = await getJournalEntries(testMode)
         setEntries(data)
       } catch (err) {
         console.error('error fetching entries', err)
@@ -16,7 +16,8 @@ const JournalEntryList = () => {
     }
 
     fetchEntries()
-  }, [])
+  }, [testMode]) // this will refetch my entries whenever toggle test/auth mode is on
+
 
   return (
     <div className="journal-entries">
@@ -40,5 +41,6 @@ const JournalEntryList = () => {
     </div>
   )
 }
+
 
 export default JournalEntryList

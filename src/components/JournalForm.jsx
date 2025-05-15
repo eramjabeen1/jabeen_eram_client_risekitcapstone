@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import { createJournalEntry } from '../services/journalService'
 
-
-
-const JournalForm = () => {
+const JournalForm = ( { testMode } ) => {
   const [formData, setFormData] = useState({
     title: '',
     text: '',
@@ -24,7 +22,7 @@ const JournalForm = () => {
  const handleSubmit = async (e) => {
   e.preventDefault()
   try {
-    const res = await createJournalEntry(formData)
+    const res = await createJournalEntry(formData, testMode)
     console.log('Journal entry saved:', res)
 
     setFormData({

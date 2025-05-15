@@ -40,3 +40,25 @@
 .read-the-docs {
   color: #888;
 }
+
+.blurred-ui {
+  filter: blur(6px);
+  pointer-events: none;
+  user-select: none;
+  transition: 0.3s ease;
+  opacity: 0.7;
+}
+
+.private-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  padding: 8px 12px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
