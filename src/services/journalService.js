@@ -35,3 +35,17 @@ if (!testMode) {
   const res = await axios.get(API_URL, config)
   return res.data
 }
+
+// DELETE 
+export const deleteJournalEntry = async (id, testMode = true) => {
+  const token = localStorage.getItem('token')
+  const config = {}
+
+  if (!testMode) {
+    config.headers = { Authorization: `Bearer ${token}` }
+  }
+
+  const res = await axios.delete(`${API_URL}/${id}`, config)
+  return res.data
+}
+

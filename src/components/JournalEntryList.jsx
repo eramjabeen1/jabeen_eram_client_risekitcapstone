@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
-import { getJournalEntries } from '../services/journalService'
+import { getJournalEntries, deleteJournalEntry } from '../services/journalService'
+
+
 
 const JournalEntryList = ({ testMode }) => {
   const [entries, setEntries] = useState([])
@@ -18,6 +20,18 @@ const JournalEntryList = ({ testMode }) => {
     fetchEntries()
   }, [testMode]) // this will refetch my entries whenever toggle test/auth mode is on
 
+ const handleDelete = async (id) => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this entry?')
+    if (!confirmDelete) return
+    
+   try {
+      await deleteJournalEntry(id)
+      setEntries((prev) => prev.filter((entry) => entry._id !== id))
+    } catch (err) {
+      console.error('Failed to delete entry:', err)
+      alert('Could not delete entry.')
+    }
+  }
 
   return (
     <div className="journal-entries">
@@ -33,6 +47,7 @@ const JournalEntryList = ({ testMode }) => {
               <p><strong>Mood:</strong> {entry.mood}</p>
               <p><strong>Imposter Score:</strong> {entry.imposterScore}</p>
               <p><strong>Private:</strong> {entry.isPrivate ? 'Yes' : 'No'}</p>
+                  <button onClick={() => handleDelete(entry._id)}>🗑 Delete</button>
               <hr />
             </li>
           ))}
