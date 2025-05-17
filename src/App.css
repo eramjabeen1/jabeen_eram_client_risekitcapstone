@@ -62,3 +62,17 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+.streaks-link {
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background: #444;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.streaks-link:hover {
+  background: #666;
+}
