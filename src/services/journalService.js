@@ -49,3 +49,16 @@ export const deleteJournalEntry = async (id, testMode = true) => {
   return res.data
 }
 
+// UPDATE
+export const updateJournalEntry = async (id, updatedData, testMode = true) => {
+  const token = localStorage.getItem('token')
+  const config = {}
+
+  if (!testMode) {
+    config.headers = { Authorization: `Bearer ${token}` }
+  }
+
+  const res = await axios.put(`${API_URL}/${id}`, updatedData, config)
+  return res.data
+}
+
