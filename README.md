@@ -1,79 +1,12 @@
-# RiseKit (Backend)
+# React + Vite
 
-##  Frontend
-https://github.com/eramjabeen1/jabeen_eram_client_risekitcapstone.git
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
-## Overview
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-This is the **backend** Express server and API for RiseKit, a wellness and journaling dashboard built to support developers especially parents, career switchers, and emotionally overwhelmed tech learners.
+## Expanding the ESLint configuration
 
-The server handles user authentication, journal entry storage, and all backend CRUD operations. It connects to a MongoDB Atlas database and serves a RESTful API consumed by the React frontend.
-
----
-
-## Core Features
-
-- RESTful API endpoints for:
-  - Creating, reading, updating, deleting journal entries
-- Optional JWT authentication
-  - Token stored in localStorage on frontend
-- Protected routes for logged-in users
-- MongoDB + Mongoose schema for journal data
-
-## Tech Stack
-Node.js
-Express
-MongoDB (Atlas)
-Mongoose
-dotenv for environment configuration
-JWT for authentication (can be toggled off for test mode)
-
-## API Endpoints
-GET 
-api/journal
-Get all journal entries for user
-
-POST
-/api/journal
-Create a new journal entry
-
-PUT
-/api/journal/:id
-Update an entry by ID
-
-DELETE
-/api/journal/:id
-Delete an entry by ID
-
-GET
-/api/journal/seed
-Add test entries (non-auth)
-
-Auth endpoints:
-POST
-/api/auth/register
-Register new user
-
-POST
-/api/auth/login
-Login and get JWT token
-
-## Setup Instructions
-1. Clone this repo: git clone https://github.com/your-username/risekit-backend.git
-cd risekit-backend
-2. Install dependencies: npm install
-3. Create a .env file: PORT=5000
-MONGO_URI=your-mongodb-atlas-url
-JWT_SECRET=your-secret
-4.Start the server: npm run dev
-
-## Database Schemas
-
-## Current Status
-
-## In Progress
-
-## Acknowledgements
-
-## Reflections
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
