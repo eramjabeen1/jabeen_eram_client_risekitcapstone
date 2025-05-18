@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getJournalEntries } from '../services/journalService'
+import StreakCounter from '../components/StreakCounter'
+
 
 const StreakStatsPage = ({ testMode = true }) => {
   const [entries, setEntries] = useState([])
@@ -21,13 +23,13 @@ const StreakStatsPage = ({ testMode = true }) => {
     fetchData()
   }, [testMode])
 
-  // Helper to format date to YYYY-MM-DD
+  // helperrrr to format date to YYYY-MM-DD
   const formatDate = (iso) => new Date(iso).toISOString().split('T')[0]
 
-  // Sort entries by date
+  // sorting entries by date
   const dates = [...new Set(entries.map(e => formatDate(e.createdAt)))].sort()
 
-  // Longest streak calculation
+  // longest streak calculation
   let longest = 0
   let current = 0
   let prevDate = null
@@ -48,7 +50,7 @@ const StreakStatsPage = ({ testMode = true }) => {
     prevDate = thisDate
   })
 
-  // Mood stats
+  // mood stats
   const moodCounts = {}
   let totalImposter = 0
 
@@ -63,6 +65,7 @@ const StreakStatsPage = ({ testMode = true }) => {
   return (
     <div className="streaks-page">
       <h2>Streak & Mood Stats</h2>
+      <StreakCounter entries={entries} />
       {loading ? (
         <p>Loading...</p>
       ) : (
