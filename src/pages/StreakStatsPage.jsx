@@ -73,6 +73,15 @@ const StreakStatsPage = ({ testMode = true }) => {
           <p><strong>Total Entries:</strong> {entries.length}</p>
           <p><strong>Longest Streak:</strong> {longest} days</p>
           <p><strong>Most Common Mood:</strong> {mostCommonMood}</p>
+          <p><strong>Mood Breakdown:</strong></p>
+    <ul>
+      {Object.entries(moodCounts).map(([mood, count]) => (
+      <li key={mood}>
+      {mood}: {count} {count === 1 ? 'entry' : 'entries'}
+    </li>
+  ))}
+</ul>
+
           <p><strong>Average Imposter Score:</strong> {avgImposter}</p>
         </>
       )}
