@@ -76,3 +76,26 @@
 .streaks-link:hover {
   background: #666;
 }
+
+.planner-page {
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+}
+
+.planner-page input[type="text"] {
+  width: 60%;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.planner-page button {
+  padding: 0.5rem;
+  margin-left: 0.25rem;
+}
+
+.planner-page textarea {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+}

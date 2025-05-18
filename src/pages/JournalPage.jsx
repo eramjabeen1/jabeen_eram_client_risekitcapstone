@@ -7,6 +7,8 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 
+
+
 const JournalPage = () => {
   const [privateMode, setPrivateMode] = useState(false)
     const [testMode, setTestMode] = useState(true)
@@ -26,6 +28,9 @@ const JournalPage = () => {
   View Streak Stats
 </Link>
 
+<Link to="/planner" className="planner-link">
+  Open Project Planner
+</Link>
 
       {/* wrap blurred content properly inside this div */}
       <div className={`journal-page ${privateMode ? 'blurred-ui' : ''}`}>
