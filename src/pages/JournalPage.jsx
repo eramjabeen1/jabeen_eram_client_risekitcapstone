@@ -32,6 +32,10 @@ const JournalPage = () => {
   Open Project Planner
 </Link>
 
+<Link to="/legacy" className="legacy-link">
+  Go to Legacy Letter
+</Link>
+ 
       {/* wrap blurred content properly inside this div */}
       <div className={`journal-page ${privateMode ? 'blurred-ui' : ''}`}>
         {/* streak and mood picker can come after MVP */}

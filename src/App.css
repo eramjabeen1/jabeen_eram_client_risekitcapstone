@@ -99,3 +99,22 @@
   margin-top: 1rem;
   padding: 1rem;
 }
+
+.legacy-page {
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+}
+
+.legacy-page textarea,
+.legacy-page input {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.legacy-page button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+}
