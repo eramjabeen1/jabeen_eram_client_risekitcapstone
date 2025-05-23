@@ -7,6 +7,7 @@ import RegisterPage from './pages/RegisterPage.jsx'
 import StreakStatsPage from './pages/StreakStatsPage'
 import PlannerPage from './pages/PlannerPage'
 import LegacyPage from './pages/LegacyPage'
+import MatchaLoungePage from './pages/MatchaLoungePage'
 
 
 import './index.css'
@@ -23,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/streaks" element={<StreakStatsPage />} />
         <Route path="/planner" element={<PlannerPage />} />
         <Route path="/legacy" element={<LegacyPage />} />
-
+       <Route path="/matcha" element={<MatchaLoungePage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
